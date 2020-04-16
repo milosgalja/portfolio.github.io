@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+		function clearContents(element) {
+    element.value = ' ';
+  }
+	</script>
+</head>
+<body>
+	<div class="container">
+				<div class="background">
+				</div> 
+				<div class="nav">
+					<a class="a active" href="#">HOME</a>
+					<a class="b" href="#">ABOUT</a>
+					<a class="c" href="#">GALLERY</a>
+					<a class="d" href="#">CONTACT</a>
+
+				</div>
+			
+				<div class="content">
+				<div class="home">
+					<h1>I am Milos Jakovljevic</h1>
+					<h2>Junior Web Developer</h2>
+				</div>
+
+				<div class="about">
+					<p><b> Lorem ipsum </b>,<br>
+						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. 
+					</p>
+				</div>
+
+				<div class="gallery">
+				
+
+					<div class="image">
+								<img src="images/image1.jpg" />
+					</div>
+					<div class="image">
+								<img src="images/image2.jpg" />
+					</div>
+					<div class="image">
+								<img src="images/image3.jpg" />
+					</div>
+
+				</div>
+
+				<div class="contact">
+					<div class='contactform'>
+						<form action="contact.php" method="post">
+							<input onfocus="clearContents(this);"  type="text" name="" class="inputtext"value=" First Name">
+							<input onfocus="clearContents(this);"   type="text" name="" class="inputtext"value=" Last Name">
+							<input onfocus="clearContents(this);"  type="text" name="" class="inputtext"value=" Your Email">
+							<textarea onfocus="clearContents(this);"  cols="4"	rows="6" class="inputmessage"> Your message...!
+							</textarea>
+							<input type="button" name="" class="submitbutton" value="Submit">
+						</form>
+					</div>
+				</div>
+				
+				<div class="logo">
+					</div><div class="logo1">
+						<a href="https://www.linkedin.com/in/milos-jakovljevic-/" target="_blank" rel="noopener" title="LinkedIn">
+							<picture>
+								<source srcset="images/linkedin.png" type="image/png" alt="linkedin Icon">
+								<img src="images/linkedin.png" alt="linkedin Icon" style="height: 40px; width: 40px; top:10px" >
+							</picture>
+						</a>
+					</div>
+				<div class="logo2">
+					<a href="https://github.com/milosgalja" target="_blank" rel="noopener" title="GitHub">
+						<picture>
+							<source media="(min-width:50px)" srcset="images/github.png" type="image/png" title="GitHub Logo" alt="GitHub Icon">
+							<img src="images/github.png" title="GitHub Logo" alt="GitHub Icon">
+						</picture>
+					</a>
+				</div>
+	</div>
+
+
+<script type="text/javascript" src="js/jQuery v3.4.1.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('a').click(function(){
+			//alert("i am click");
+			var selected = $(this);
+			$('a').removeClass('active');
+			$(selected).addClass('active');
+			});
+		var $a = $('.a'),
+		$b = $('.b'),
+		$c = $('.c'),
+		$d = $('.d'),
+		$home = $('.home'),
+		$about = $('.about');
+		$gallery = $('.gallery')
+		$contact = $('.contact')
+
+		$a.click(function(){
+			$home.fadeIn();
+			$about.fadeOut();
+			$gallery.fadeOut();
+			$contact.fadeOut();
+
+		});
+		$b.click(function(){
+			$home.fadeOut();
+			$about.fadeIn();
+			$gallery.fadeOut();
+			$contact.fadeOut();
+
+
+		});
+		$c.click(function(){
+			$home.fadeOut();
+			$about.fadeOut();
+			$gallery.fadeIn();
+			$contact.fadeOut();
+
+
+		});
+		$d.click(function(){
+			$home.fadeOut();
+			$about.fadeOut();
+			$gallery.fadeOut();
+			$contact.fadeIn();
+		});
+	
+		$('First Name').click(function(e) { 
+			e.target.value = ''; })
+
+	}	
+	);
+</script>
+</body>
+
+
+</html>
